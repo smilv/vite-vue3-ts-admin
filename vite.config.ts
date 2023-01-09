@@ -8,6 +8,7 @@ import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 import Unocss from "unocss/vite";
 import { presetAttributify, presetIcons, presetUno, transformerDirectives, transformerVariantGroup } from "unocss";
 
+import checker from "vite-plugin-checker";
 // https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
@@ -49,6 +50,9 @@ export default defineConfig({
         }),
       ],
       transformers: [transformerDirectives(), transformerVariantGroup()],
+    }),
+    checker({
+      typescript: true,
     }),
   ],
 });

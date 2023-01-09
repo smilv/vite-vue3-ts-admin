@@ -3,7 +3,7 @@
  * @Author: zhaobin
  * @Date: 2022-12-27 14:46:03
  * @LastEditors: zhaobin
- * @LastEditTime: 2022-12-27 17:07:26
+ * @LastEditTime: 2023-01-09 10:34:06
 -->
 <script setup lang="ts">
 import zhCn from "element-plus/lib/locale/lang/zh-cn";
