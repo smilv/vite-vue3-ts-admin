@@ -3,7 +3,7 @@
  * @Author: zhaobin
  * @Date: 2023-01-10 11:15:29
  * @LastEditors: zhaobin
- * @LastEditTime: 2023-01-12 17:00:59
+ * @LastEditTime: 2023-01-13 11:45:43
 -->
 <script lang="ts">
 export default {
@@ -13,7 +13,7 @@ export default {
 <script lang="ts" setup>
 import { ref, reactive } from "vue";
 import { VueFlow, useVueFlow, Panel, PanelPosition, MarkerType } from "@vue-flow/core";
-import type { VueFlowStore, Node, Edge } from "@vue-flow/core";
+import type { VueFlowStore, Node, Edge, Connection } from "@vue-flow/core";
 import { Background } from "@vue-flow/background";
 import { Controls } from "@vue-flow/controls";
 import { MiniMap } from "@vue-flow/minimap";
@@ -22,21 +22,31 @@ interface VueFlowInstance {
 }
 
 const nodes = ref<Node[]>([
-  { id: "node-1", type: "input", label: "Node 1", position: { x: 100, y: 5 } },
-  { id: "node-2", label: "Node 2", position: { x: 100, y: 100 } },
+  { id: "node-1", type: "input", label: "Node 1", position: { x: 0, y: 0 } },
+  { id: "node-2", label: "Node 2", position: { x: 0, y: 100 } },
 ]);
 const edges = ref<Edge[]>([
   {
     id: "e1-2",
     source: "node-1",
     target: "node-2",
-    markerEnd: MarkerType.Arrow,
+    markerEnd: MarkerType.ArrowClosed,
   },
 ]);
 const vueFlowInstance: VueFlowInstance = reactive({ instance: null });
 const defaultZoom = ref<number>(1);
-const { onPaneReady, addNodes, setNodes, setEdges, nodesSelectionActive, addSelectedNodes, getNodes, toObject } =
-  useVueFlow();
+const {
+  onPaneReady,
+  addNodes,
+  addEdges,
+  setNodes,
+  setEdges,
+  nodesSelectionActive,
+  addSelectedNodes,
+  getNodes,
+  toObject,
+  dimensions,
+} = useVueFlow();
 
 onPaneReady((instance) => {
   vueFlowInstance.instance = instance;
@@ -48,12 +58,12 @@ function resetTransform() {
 }
 function addNode() {
   const id = getNodes.value.length + 1;
-  const newNode = {
+  const node = {
     id: `node-${id}`,
     label: `Node ${id}`,
-    position: { x: 0, y: 0 },
+    position: { x: (Math.random() * dimensions.value.width) / 2, y: (Math.random() * dimensions.value.height) / 2 },
   };
-  addNodes([newNode]);
+  addNodes([node]);
 }
 function selectAll() {
   addSelectedNodes(getNodes.value);
@@ -67,9 +77,16 @@ function reset() {
 function save() {
   console.log(toObject());
 }
+function onConnect(connectionEvent: Connection) {
+  const edge = {
+    ...connectionEvent,
+    markerEnd: MarkerType.ArrowClosed,
+  };
+  addEdges([edge]);
+}
 </script>
 <template>
-  <VueFlow :nodes="nodes" :edges="edges" auto-connect>
+  <VueFlow :nodes="nodes" :edges="edges" @connect="onConnect">
     <Panel :position="PanelPosition.TopRight">
       <el-button type="primary" @click="addNode">新增节点</el-button>
       <el-button type="primary" @click="reset">重置</el-button>
@@ -85,5 +102,8 @@ function save() {
 @import "@vue-flow/core/dist/style.css";
 @import "@vue-flow/core/dist/theme-default.css";
 @import "@vue-flow/controls/dist/style.css";
+.vue-flow__controls {
+  border-bottom: solid 2px;
+}
 </style>
 <style lang="scss" scoped></style>

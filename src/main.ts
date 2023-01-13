@@ -3,7 +3,7 @@
  * @Author: zhaobin
  * @Date: 2022-08-13 16:22:58
  * @LastEditors: zhaobin
- * @LastEditTime: 2023-01-12 10:20:04
+ * @LastEditTime: 2023-01-13 15:38:30
  */
 import { createApp } from "vue";
 import App from "./App.vue";
