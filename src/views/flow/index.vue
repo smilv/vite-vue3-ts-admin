@@ -3,14 +3,9 @@
  * @Author: zhaobin
  * @Date: 2023-01-10 11:15:29
  * @LastEditors: zhaobin
- * @LastEditTime: 2023-01-13 11:45:43
+ * @LastEditTime: 2023-03-27 14:26:05
 -->
-<script lang="ts">
-export default {
-  name: "FlowIndex",
-};
-</script>
-<script lang="ts" setup>
+<script lang="ts" setup name="FlowIndex">
 import { ref, reactive } from "vue";
 import { VueFlow, useVueFlow, Panel, PanelPosition, MarkerType } from "@vue-flow/core";
 import type { VueFlowStore, Node, Edge, Connection } from "@vue-flow/core";

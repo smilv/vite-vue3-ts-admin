@@ -3,7 +3,7 @@
  * @Author: zhaobin
  * @Date: 2023-01-10 14:02:01
  * @LastEditors: zhaobin
- * @LastEditTime: 2023-01-10 15:52:03
+ * @LastEditTime: 2023-03-27 09:51:17
  */
 import type { RouteRecordRaw } from "vue-router";
 import Layout from "@/layout/index.vue";
@@ -20,7 +20,7 @@ const flow: RouteRecordRaw = {
   children: [
     {
       path: "index",
-      component: () => import(/* webpackChunkName: "flow-index" */ "@/views/flow/index.vue"),
+      component: () => import("@/views/flow/index.vue"),
       name: "FlowIndex",
       meta: {
         title: "流程图",
