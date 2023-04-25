@@ -3,9 +3,10 @@
  * @Author: zhaobin
  * @Date: 2022-12-27 17:09:18
  * @LastEditors: zhaobin
- * @LastEditTime: 2023-03-27 14:58:43
+ * @LastEditTime: 2023-04-25 17:14:15
  */
-import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
+import type { RouteRecordRaw } from "vue-router";
 import Layout from "@/layout/index.vue";
 
 // import.meta.glob() 直接引入所有的模块 Vite 独有的功能
