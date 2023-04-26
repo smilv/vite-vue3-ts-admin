@@ -3,7 +3,7 @@
  * @Author: zhaobin
  * @Date: 2023-01-09 10:30:13
  * @LastEditors: zhaobin
- * @LastEditTime: 2023-03-27 17:06:39
+ * @LastEditTime: 2023-04-26 17:35:40
 -->
 <script lang="ts" setup name="Layout">
 import BaseHeader from "@/layout/components/BaseHeader.vue";
@@ -32,12 +32,13 @@ import Main from "@/layout/components/Main.vue";
 <style lang="scss" scoped>
 .layout-container {
   .el-header {
-    background-color: var(--el-color-primary-light-7);
     color: var(--el-text-color-primary);
   }
   .el-aside {
     color: var(--el-text-color-primary);
-    background: var(--el-color-primary-light-8);
+    .el-menu {
+      border-right: none;
+    }
   }
   .el-main {
     padding: 0;

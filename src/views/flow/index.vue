@@ -3,7 +3,7 @@
  * @Author: zhaobin
  * @Date: 2023-01-10 11:15:29
  * @LastEditors: zhaobin
- * @LastEditTime: 2023-03-27 14:26:05
+ * @LastEditTime: 2023-04-26 17:25:59
 -->
 <script lang="ts" setup name="FlowIndex">
 import { ref, reactive } from "vue";
@@ -81,17 +81,19 @@ function onConnect(connectionEvent: Connection) {
 }
 </script>
 <template>
-  <VueFlow :nodes="nodes" :edges="edges" @connect="onConnect">
-    <Panel :position="PanelPosition.TopRight">
-      <el-button type="primary" @click="addNode">新增节点</el-button>
-      <el-button type="primary" @click="reset">重置</el-button>
-      <el-button type="primary" @click="selectAll">全选</el-button>
-      <el-button type="primary" @click="save">保存</el-button>
-    </Panel>
-    <Background />
-    <MiniMap />
-    <Controls />
-  </VueFlow>
+  <div class="flow-wrapper">
+    <VueFlow :nodes="nodes" :edges="edges" @connect="onConnect">
+      <Panel :position="PanelPosition.TopRight">
+        <el-button type="primary" @click="addNode">新增节点</el-button>
+        <el-button type="primary" @click="reset">重置</el-button>
+        <el-button type="primary" @click="selectAll">全选</el-button>
+        <el-button type="primary" @click="save">保存</el-button>
+      </Panel>
+      <Background />
+      <MiniMap />
+      <Controls />
+    </VueFlow>
+  </div>
 </template>
 <style>
 @import "@vue-flow/core/dist/style.css";
@@ -101,4 +103,11 @@ function onConnect(connectionEvent: Connection) {
   border-bottom: solid 2px;
 }
 </style>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.flow-wrapper {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+</style>

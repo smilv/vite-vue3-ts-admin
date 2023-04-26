@@ -3,7 +3,7 @@
  * @Author: zhaobin
  * @Date: 2022-12-27 17:09:18
  * @LastEditors: zhaobin
- * @LastEditTime: 2023-04-25 17:14:15
+ * @LastEditTime: 2023-04-26 14:37:41
  */
 import { createRouter, createWebHistory } from "vue-router";
 import type { RouteRecordRaw } from "vue-router";
@@ -45,7 +45,7 @@ export const constantRoutes: RouteRecordRaw[] = [
 
 export const router = createRouter({
   history: createWebHistory(),
-  routes: constantRoutes.concat(routeModuleList),
+  routes: constantRoutes,
 });
 
 export default router;

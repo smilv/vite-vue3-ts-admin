@@ -3,7 +3,7 @@
  * @Author: zhaobin
  * @Date: 2022-08-13 16:22:58
  * @LastEditors: zhaobin
- * @LastEditTime: 2023-03-28 16:43:35
+ * @LastEditTime: 2023-04-26 16:08:48
  */
 import path from "path";
 import { defineConfig } from "vite";
@@ -89,4 +89,9 @@ export default defineConfig({
       typescript: true,
     }),
   ],
+  server: {
+    host: true,
+    port: 3100,
+    open: true,
+  },
 });
