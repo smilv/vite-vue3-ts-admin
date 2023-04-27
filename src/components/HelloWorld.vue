@@ -1,3 +1,10 @@
+<!--
+ * @Description: 
+ * @Author: zhaobin
+ * @Date: 2023-04-03 18:08:56
+ * @LastEditors: zhaobin
+ * @LastEditTime: 2023-04-27 17:19:20
+-->
 <script setup lang="ts">
 import { ref } from "vue";
 import { ElMessage } from "element-plus";
@@ -56,9 +63,3 @@ const toast = () => {
     >
   </p>
 </template>
-
-<style>
-.ep-button {
-  margin: 4px;
-}
-</style>

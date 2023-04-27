@@ -3,7 +3,7 @@
  * @Author: zhaobin
  * @Date: 2022-12-27 17:09:18
  * @LastEditors: zhaobin
- * @LastEditTime: 2023-04-26 14:37:41
+ * @LastEditTime: 2023-04-27 17:16:34
  */
 import { createRouter, createWebHistory } from "vue-router";
 import type { RouteRecordRaw } from "vue-router";
@@ -36,7 +36,23 @@ export const constantRoutes: RouteRecordRaw[] = [
         meta: {
           title: "dashboard",
           icon: "dashboard",
-          affix: true,
+        },
+      },
+    ],
+  },
+  {
+    path: "/:path(.*)*",
+    component: Layout,
+    meta: {
+      title: "ErrorPage",
+    },
+    children: [
+      {
+        path: "/:path(.*)*",
+        component: () => import("@/views/error-page/index.vue"),
+        name: "ErrorPage",
+        meta: {
+          title: "ErrorPage",
         },
       },
     ],
