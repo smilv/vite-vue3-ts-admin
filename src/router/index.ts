@@ -3,7 +3,7 @@
  * @Author: zhaobin
  * @Date: 2022-12-27 17:09:18
  * @LastEditors: zhaobin
- * @LastEditTime: 2023-04-27 17:16:34
+ * @LastEditTime: 2023-05-17 18:20:48
  */
 import { createRouter, createWebHistory } from "vue-router";
 import type { RouteRecordRaw } from "vue-router";
@@ -25,26 +25,11 @@ Object.keys(modules).forEach((key) => {
 export const asyncRoutes = routeModuleList;
 export const constantRoutes: RouteRecordRaw[] = [
   {
-    path: "/",
-    component: Layout,
-    redirect: "/dashboard",
-    children: [
-      {
-        path: "dashboard",
-        component: () => import("@/views/dashboard/index.vue"),
-        name: "Dashboard",
-        meta: {
-          title: "dashboard",
-          icon: "dashboard",
-        },
-      },
-    ],
-  },
-  {
     path: "/:path(.*)*",
     component: Layout,
     meta: {
       title: "ErrorPage",
+      hideMenu: true,
     },
     children: [
       {
@@ -53,6 +38,25 @@ export const constantRoutes: RouteRecordRaw[] = [
         name: "ErrorPage",
         meta: {
           title: "ErrorPage",
+        },
+      },
+    ],
+  },
+  {
+    path: "/",
+    component: Layout,
+    redirect: "/dashboard",
+    meta: {
+      title: "首页",
+      hideChildrenMenu: true,
+    },
+    children: [
+      {
+        path: "dashboard",
+        component: () => import("@/views/dashboard/index.vue"),
+        name: "Dashboard",
+        meta: {
+          title: "首页",
         },
       },
     ],
