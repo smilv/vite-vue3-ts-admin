@@ -3,7 +3,7 @@
  * @Author: zhaobin
  * @Date: 2023-03-27 15:15:27
  * @LastEditors: zhaobin
- * @LastEditTime: 2023-05-30 15:04:51
+ * @LastEditTime: 2023-05-31 17:15:17
 -->
 <script setup lang="ts" name="Sidebar">
 import { useRoute } from "vue-router";
@@ -16,7 +16,11 @@ const permissionStore = usePermissionStore();
 
 const { routes } = storeToRefs(permissionStore);
 const activeMenu = computed(() => {
-  return route.path;
+  const { meta, path } = route;
+  if (meta.activeMenu) {
+    return meta.activeMenu;
+  }
+  return path;
 });
 const isCollapse = ref(false);
 const handleOpen = (key: string, keyPath: string[]) => {

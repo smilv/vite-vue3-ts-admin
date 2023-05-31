@@ -3,12 +3,9 @@
  * @Author: zhaobin
  * @Date: 2023-04-03 18:08:56
  * @LastEditors: zhaobin
- * @LastEditTime: 2023-04-27 17:19:20
+ * @LastEditTime: 2023-05-31 16:25:32
 -->
 <script setup lang="ts">
-import { ref } from "vue";
-import { ElMessage } from "element-plus";
-
 defineProps<{ msg: string }>();
 
 const count = ref(0);
@@ -28,7 +25,7 @@ const toast = () => {
     See
     <a href="https://element-plus.org" target="_blank">element-plus</a> for more information.
   </p>
-
+  <el-button type="info" icon="Search" circle />
   <!-- example components -->
   <el-button @click="toast">El Message</el-button>
   <el-button type="primary" @click="count++">count is: {{ count }}</el-button>

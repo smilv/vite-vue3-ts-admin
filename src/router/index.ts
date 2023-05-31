@@ -3,7 +3,7 @@
  * @Author: zhaobin
  * @Date: 2022-12-27 17:09:18
  * @LastEditors: zhaobin
- * @LastEditTime: 2023-05-18 15:29:30
+ * @LastEditTime: 2023-05-31 17:14:47
  */
 import { createRouter, createWebHistory } from "vue-router";
 import type { RouteRecordRaw } from "vue-router";
@@ -48,7 +48,9 @@ export const constantRoutes: RouteRecordRaw[] = [
     redirect: "/dashboard",
     meta: {
       title: "首页",
+      icon: "dashboard",
       hideChildrenMenu: true,
+      activeMenu: "/",
     },
     children: [
       {
@@ -62,11 +64,9 @@ export const constantRoutes: RouteRecordRaw[] = [
     ],
   },
   {
-    path: "/ba",
-    component: Layout,
-    meta: {
-      title: "首页2",
-    },
+    path: "/baidu-link",
+    redirect: "",
+    meta: { link: "http://baidu.com", title: "百度", icon: "link" },
   },
 ];
 
