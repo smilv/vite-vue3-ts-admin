@@ -1,9 +1,7 @@
 // import dark theme
 @use "element-plus/theme-chalk/src/dark/css-vars.scss" as *;
-
-// :root {
-//   --ep-color-primary: red;
-// }
+@use "./theme.scss";
+@use "./sidebar.scss";
 
 body {
   font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial,
@@ -13,8 +11,17 @@ body {
   margin: 0;
 }
 
-a {
-  color: var(--ep-color-primary);
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
 }
 
 code {

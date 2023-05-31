@@ -1,0 +1,24 @@
+.sidebar-container {
+  background-color: #304156;
+  color: #bfcbd9;
+
+  .el-sub-menu__title,
+  .el-menu-item {
+    color: #bfcbd9;
+    &:hover {
+      background-color: #263445;
+    }
+  }
+
+  .nest-menu .el-sub-menu > .el-sub-menu__title,
+  .el-sub-menu .el-menu-item {
+    background-color: #1f2d3d;
+    &:hover {
+      background-color: #001528;
+    }
+  }
+
+  .el-menu-item.is-active {
+    color: #1890ff;
+  }
+}

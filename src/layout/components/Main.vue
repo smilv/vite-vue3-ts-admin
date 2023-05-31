@@ -3,7 +3,7 @@
  * @Author: zhaobin
  * @Date: 2023-03-27 16:45:09
  * @LastEditors: zhaobin
- * @LastEditTime: 2023-04-26 17:24:54
+ * @LastEditTime: 2023-05-30 13:52:50
 -->
 <template>
   <section class="app-main">
@@ -16,6 +16,6 @@
 </template>
 <style lang="scss" scoped>
 .app-main {
-  // padding: var(--el-main-padding);
+  padding: var(--el-main-padding);
 }
 </style>

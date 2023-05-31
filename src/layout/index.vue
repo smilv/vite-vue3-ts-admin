@@ -3,7 +3,7 @@
  * @Author: zhaobin
  * @Date: 2023-01-09 10:30:13
  * @LastEditors: zhaobin
- * @LastEditTime: 2023-04-26 17:35:40
+ * @LastEditTime: 2023-05-24 15:05:46
 -->
 <script lang="ts" setup name="Layout">
 import BaseHeader from "@/layout/components/BaseHeader.vue";
@@ -35,9 +35,10 @@ import Main from "@/layout/components/Main.vue";
     color: var(--el-text-color-primary);
   }
   .el-aside {
-    color: var(--el-text-color-primary);
+    width: 210px;
     .el-menu {
       border-right: none;
+      height: 100vh;
     }
   }
   .el-main {

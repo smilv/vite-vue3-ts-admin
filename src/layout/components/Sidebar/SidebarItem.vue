@@ -3,7 +3,7 @@
  * @Author: zhaobin
  * @Date: 2023-05-17 14:35:24
  * @LastEditors: zhaobin
- * @LastEditTime: 2023-05-18 16:32:48
+ * @LastEditTime: 2023-05-30 14:44:52
 -->
 <script setup lang="ts" name="SidebarItem">
 import { Menu } from "@element-plus/icons-vue";
@@ -31,7 +31,7 @@ function resolvePath(routePath: string) {
 }
 </script>
 <template>
-  <template v-if="!item.meta?.hideMenu">
+  <div v-if="!item.meta?.hideMenu">
     <template v-if="!item.children?.length || item.meta?.hideChildrenMenu">
       <Link :to="basePath">
         <el-menu-item :index="basePath">
@@ -51,7 +51,8 @@ function resolvePath(routePath: string) {
         :key="child.path"
         :item="child"
         :base-path="resolvePath(child.path)"
+        class="nest-menu"
       />
     </el-sub-menu>
-  </template>
+  </div>
 </template>
