@@ -3,7 +3,7 @@
  * @Author: zhaobin
  * @Date: 2022-08-13 16:22:58
  * @LastEditors: zhaobin
- * @LastEditTime: 2023-04-26 16:08:48
+ * @LastEditTime: 2023-06-02 10:42:41
  */
 import path from "path";
 import { defineConfig } from "vite";
@@ -51,6 +51,11 @@ export default defineConfig({
         //   prefix: "Icon",
         // }),
       ],
+      eslintrc: {
+        enabled: true,
+        filepath: './.eslintrc-auto-import.json',
+        globalsPropValue: true
+      },
       dts: "types/auto-imports.d.ts",
     }),
     Components({
