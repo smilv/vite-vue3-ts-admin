@@ -3,11 +3,12 @@
  * @Author: zhaobin
  * @Date: 2023-05-17 14:35:24
  * @LastEditors: zhaobin
- * @LastEditTime: 2023-05-31 16:22:04
+ * @LastEditTime: 2023-06-06 16:46:05
 -->
 <script setup lang="ts" name="SidebarItem">
 import { resolve } from "path-browserify";
 import Link from "./Link.vue";
+import Item from "./Item.vue";
 const props = defineProps({
   item: {
     type: Object,
@@ -30,16 +31,13 @@ function resolvePath(routePath: string) {
     <template v-if="!item.children?.length || item.meta?.hideChildrenMenu">
       <Link :to="linkToPath">
         <el-menu-item :index="basePath">
-          <template #title>
-            <span v-if="item.meta">{{ item.meta.title }}</span>
-          </template>
+          <Item :meta="item.meta"></Item>
         </el-menu-item>
       </Link>
     </template>
     <el-sub-menu v-else :index="basePath">
       <template #title>
-        <el-icon><Menu /></el-icon>
-        <span v-if="item.meta">{{ item.meta.title }}</span>
+        <Item :meta="item.meta"></Item>
       </template>
       <SidebarItem
         v-for="child in item.children"

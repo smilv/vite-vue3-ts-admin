@@ -3,7 +3,7 @@
  * @Author: zhaobin
  * @Date: 2023-04-03 18:08:56
  * @LastEditors: zhaobin
- * @LastEditTime: 2023-05-31 16:25:32
+ * @LastEditTime: 2023-06-06 14:14:04
 -->
 <script setup lang="ts">
 defineProps<{ msg: string }>();
@@ -35,7 +35,7 @@ const toast = () => {
   <el-button type="info" @click="count++">count is: {{ count }}</el-button>
   <br />
   <el-input v-model="input" style="width: 200px; margin: 20px" />
-  <el-tag>Tag 1</el-tag>
+  <el-tag disable-transitions>Tag 1</el-tag>
 
   <br />
   <el-date-picker v-model="curDate" type="date" placeholder="Pick a day"></el-date-picker>

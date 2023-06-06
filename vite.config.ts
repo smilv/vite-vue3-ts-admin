@@ -3,13 +3,14 @@
  * @Author: zhaobin
  * @Date: 2022-08-13 16:22:58
  * @LastEditors: zhaobin
- * @LastEditTime: 2023-06-02 10:42:41
+ * @LastEditTime: 2023-06-06 15:00:44
  */
 import path from "path";
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import vueSetupExtend from "vite-plugin-vue-setup-extend";
 
+import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 import Icons from "unplugin-icons/vite";
 import IconsResolver from "unplugin-icons/resolver";
 import AutoImport from "unplugin-auto-import/vite";
@@ -37,6 +38,10 @@ export default defineConfig({
   plugins: [
     vue(),
     vueSetupExtend(),
+    createSvgIconsPlugin({
+      iconDirs: [path.resolve(process.cwd(), "src/icons/svg")],
+      symbolId: 'icon-[dir]-[name]'
+    }),
     AutoImport({
       // Auto import functions from Vue, e.g. ref, reactive, toRef...
       // 自动导入 Vue 相关函数，如：ref, reactive, toRef 等
@@ -53,8 +58,8 @@ export default defineConfig({
       ],
       eslintrc: {
         enabled: true,
-        filepath: './.eslintrc-auto-import.json',
-        globalsPropValue: true
+        filepath: "./.eslintrc-auto-import.json",
+        globalsPropValue: true,
       },
       dts: "types/auto-imports.d.ts",
     }),
