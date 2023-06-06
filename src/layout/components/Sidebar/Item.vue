@@ -1,9 +1,9 @@
 <!--
- * @Description: 
+ * @Description: MenuItem
  * @Author: zhaobin
  * @Date: 2023-06-06 15:16:45
  * @LastEditors: zhaobin
- * @LastEditTime: 2023-06-06 16:52:00
+ * @LastEditTime: 2023-06-06 17:09:21
 -->
 <script setup lang="ts" name="MenuItem">
 const props = defineProps({
