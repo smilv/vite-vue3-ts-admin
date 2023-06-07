@@ -3,7 +3,7 @@
  * @Author: zhaobin
  * @Date: 2023-01-10 14:02:01
  * @LastEditors: zhaobin
- * @LastEditTime: 2023-06-06 16:37:15
+ * @LastEditTime: 2023-06-07 10:49:59
  */
 import type { RouteRecordRaw } from "vue-router";
 import Layout from "@/layout/index.vue";
@@ -15,7 +15,7 @@ const flow: RouteRecordRaw = {
   name: "Flow",
   meta: {
     title: "流程图",
-    // icon: "flow",
+    icon: "flow",
   },
   children: [
     {

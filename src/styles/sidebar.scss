@@ -1,7 +1,13 @@
 .sidebar-container {
+  width: 210px;
   background-color: #304156;
   color: #bfcbd9;
+  height: 100vh;
 
+  .el-menu {
+    border-right: none;
+    background-color: #304156;
+  }
   .el-sub-menu__title,
   .el-menu-item {
     color: #bfcbd9;

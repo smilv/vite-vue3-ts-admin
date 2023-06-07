@@ -3,7 +3,7 @@
  * @Author: zhaobin
  * @Date: 2023-03-27 15:15:27
  * @LastEditors: zhaobin
- * @LastEditTime: 2023-05-31 17:15:17
+ * @LastEditTime: 2023-06-07 13:40:08
 -->
 <script setup lang="ts" name="Sidebar">
 import { useRoute } from "vue-router";
@@ -31,13 +31,11 @@ const handleClose = (key: string, keyPath: string[]) => {
 };
 </script>
 <template>
-  <el-menu
-    :default-active="activeMenu"
-    :collapse="isCollapse"
-    @open="handleOpen"
-    @close="handleClose"
-    class="sidebar-container"
-  >
-    <SidebarItem v-for="route in routes" :key="route.path" :item="route" :base-path="route.path" />
-  </el-menu>
+  <el-aside class="sidebar-container">
+    <el-scrollbar>
+      <el-menu :default-active="activeMenu" :collapse="isCollapse" @open="handleOpen" @close="handleClose">
+        <SidebarItem v-for="route in routes" :key="route.path" :item="route" :base-path="route.path" />
+      </el-menu>
+    </el-scrollbar>
+  </el-aside>
 </template>

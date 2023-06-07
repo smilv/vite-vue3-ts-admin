@@ -3,7 +3,7 @@
  * @Author: zhaobin
  * @Date: 2022-08-13 16:22:58
  * @LastEditors: zhaobin
- * @LastEditTime: 2023-06-06 15:00:44
+ * @LastEditTime: 2023-06-07 10:48:07
  */
 import path from "path";
 import { defineConfig } from "vite";
@@ -39,8 +39,8 @@ export default defineConfig({
     vue(),
     vueSetupExtend(),
     createSvgIconsPlugin({
-      iconDirs: [path.resolve(process.cwd(), "src/icons/svg")],
-      symbolId: 'icon-[dir]-[name]'
+      iconDirs: [path.resolve(process.cwd(), "src/assets/icons")],
+      symbolId: "icon-[dir]-[name]",
     }),
     AutoImport({
       // Auto import functions from Vue, e.g. ref, reactive, toRef...
