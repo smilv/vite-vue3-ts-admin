@@ -3,29 +3,29 @@
  * @Author: zhaobin
  * @Date: 2023-01-10 14:02:01
  * @LastEditors: zhaobin
- * @LastEditTime: 2023-06-07 10:49:59
+ * @LastEditTime: 2023-06-07 14:18:21
  */
 import type { RouteRecordRaw } from "vue-router";
 import Layout from "@/layout/index.vue";
 
-const flow: RouteRecordRaw = {
-  path: "/flow",
+const charts: RouteRecordRaw = {
+  path: "/charts",
   component: Layout,
-  redirect: "/flow/index",
-  name: "Flow",
+  redirect: "/charts/flow",
+  name: "Charts",
   meta: {
-    title: "流程图",
-    icon: "flow",
+    title: "图表",
+    icon: "charts",
   },
   children: [
     {
-      path: "index",
-      component: () => import("@/views/flow/index.vue"),
-      name: "FlowIndex",
+      path: "flow",
+      component: () => import("@/views/charts/flow.vue"),
+      name: "Flow",
       meta: {
         title: "流程图",
       },
     },
   ],
 };
-export default flow;
+export default charts;

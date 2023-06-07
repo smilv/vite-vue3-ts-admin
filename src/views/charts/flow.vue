@@ -3,12 +3,11 @@
  * @Author: zhaobin
  * @Date: 2023-01-10 11:15:29
  * @LastEditors: zhaobin
- * @LastEditTime: 2023-04-26 17:25:59
+ * @LastEditTime: 2023-06-07 14:24:33
 -->
-<script lang="ts" setup name="FlowIndex">
-import { ref, reactive } from "vue";
-import { VueFlow, useVueFlow, Panel, PanelPosition, MarkerType } from "@vue-flow/core";
+<script lang="ts" setup name="Flow">
 import type { VueFlowStore, Node, Edge, Connection } from "@vue-flow/core";
+import { VueFlow, useVueFlow, Panel, PanelPosition, MarkerType } from "@vue-flow/core";
 import { Background } from "@vue-flow/background";
 import { Controls } from "@vue-flow/controls";
 import { MiniMap } from "@vue-flow/minimap";
