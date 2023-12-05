@@ -3,7 +3,7 @@
  * @Author: zhaobin
  * @Date: 2023-01-10 11:15:29
  * @LastEditors: zhaobin
- * @LastEditTime: 2023-06-07 14:24:33
+ * @LastEditTime: 2023-12-05 15:39:45
 -->
 <script lang="ts" setup name="Flow">
 import type { VueFlowStore, Node, Edge, Connection } from "@vue-flow/core";
@@ -80,7 +80,7 @@ function onConnect(connectionEvent: Connection) {
 }
 </script>
 <template>
-  <div class="flow-wrapper">
+  <div class="w-full absolute top-0 bottom-0">
     <VueFlow :nodes="nodes" :edges="edges" @connect="onConnect">
       <Panel :position="PanelPosition.TopRight">
         <el-button type="primary" @click="addNode">新增节点</el-button>
@@ -100,13 +100,5 @@ function onConnect(connectionEvent: Connection) {
 @import "@vue-flow/controls/dist/style.css";
 .vue-flow__controls {
   border-bottom: solid 2px;
-}
-</style>
-<style lang="scss" scoped>
-.flow-wrapper {
-  width: 100%;
-  position: absolute;
-  top: 0;
-  bottom: 0;
 }
 </style>

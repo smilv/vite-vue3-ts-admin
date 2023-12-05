@@ -3,13 +3,13 @@
  * @Author: zhaobin
  * @Date: 2023-03-27 16:45:09
  * @LastEditors: zhaobin
- * @LastEditTime: 2023-05-30 13:52:50
+ * @LastEditTime: 2023-12-05 14:15:28
 -->
 <template>
   <section class="app-main">
-    <router-view v-slot="{ Component }">
+    <router-view v-slot="{ Component, route }">
       <keep-alive>
-        <component :is="Component" />
+        <component :is="Component" :key="route.fullPath" />
       </keep-alive>
     </router-view>
   </section>

@@ -3,7 +3,7 @@
  * @Author: zhaobin
  * @Date: 2023-06-06 15:16:45
  * @LastEditors: zhaobin
- * @LastEditTime: 2023-06-06 17:09:21
+ * @LastEditTime: 2023-12-05 15:32:58
 -->
 <script setup lang="ts" name="MenuItem">
 const props = defineProps({
@@ -17,15 +17,6 @@ const iconClass = computed(() => {
 });
 </script>
 <template>
-  <SvgIcon v-if="iconClass" :iconClass="iconClass" class="menu-icon"></SvgIcon>
-  <span v-if="meta.title" class="title-indent">{{ meta.title }}</span>
+  <SvgIcon v-if="iconClass" :iconClass="iconClass" class="m-r-1 text-base"></SvgIcon>
+  <span v-if="meta.title" class="m-l-1">{{ meta.title }}</span>
 </template>
-<style lang="scss" scoped>
-.menu-icon {
-  margin-right: 4px;
-  font-size: 16px;
-}
-.title-indent {
-  margin-left: 6px;
-}
-</style>
